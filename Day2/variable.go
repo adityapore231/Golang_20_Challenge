@@ -1,6 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+)
+
+// global variabel
+
+const auth_token = "aajshdkjdhsiodhaso6876"
 
 func main() {
 	var username string = "aditya"
@@ -15,9 +23,40 @@ func main() {
 	fmt.Println(smallval)
 	fmt.Printf("type of varible is %T \n", smallval)
 
+	var dummy uint8
+	fmt.Println(dummy)
+	fmt.Printf("type of varible is %T \n", dummy)
+
 	var floatval float32 = 245.4654576876
 	fmt.Println(floatval)
 	fmt.Printf("type of varible is %T \n", floatval)
 
 	//245.46545
+
+	var floatval64 float64 = 245.4654576876
+	fmt.Println(floatval64)
+	fmt.Printf("type of varible is %T \n", floatval64)
+
+	// we can declare varible without mentiosning it's type
+	var str = "mynameisaditya"
+	fmt.Println(str)
+
+	// withouth using var keyword := is called as walrus operator
+	a := 898
+	fmt.Println(a)
+
+	// use global variable
+	fmt.Println(auth_token)
+
+	// taking input from user
+	welcome_msg := "welcome"
+	println(welcome_msg)
+
+	fmt.Println("enter your age")
+	reader := bufio.NewReader(os.Stdin)
+
+	input, err := reader.ReadString('\n')
+	fmt.Println("Your age is", input)
+	fmt.Println("You enterted wroung,", err)
+
 }
