@@ -4,6 +4,8 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"strconv"
+	"strings"
 )
 
 // global variabel
@@ -57,6 +59,12 @@ func main() {
 
 	input, err := reader.ReadString('\n')
 	fmt.Println("Your age is", input)
-	fmt.Println("You enterted wroung,", err)
 
+	//handling Input and conversion
+	age, _ := strconv.ParseUint(strings.TrimSpace(input), 10, 8)
+	if err != nil {
+		fmt.Println("Error parsing:", err)
+	} else {
+		fmt.Println("Parsed value:", age+2) // Output: 123
+	}
 }
