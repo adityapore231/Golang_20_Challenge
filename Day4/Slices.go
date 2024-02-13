@@ -16,10 +16,17 @@ func main() {
 	age[0] = 23
 	age[1] = 25
 	age[2] = 26
-	//age[3] = 27
+	age[3] = 27
 
 	fmt.Print(age)                                       // [22 26 23 25]
 	fmt.Println("\nLength of age array is : ", len(age)) // Length of age array is :  4
 
 	// Accessing out of range index will cause a runtime error
+
+	// using append to remove an element from the slice
+
+	// remove the element at index 1
+	age = append(age[:1], age[2:]...)
+	fmt.Println(age) // [23 26 27]
+
 }
